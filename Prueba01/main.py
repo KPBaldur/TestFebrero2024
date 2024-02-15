@@ -22,16 +22,26 @@ print("La suma de la diagonal de la matriz es:", resultado)
 #SEGUNDA PRUEBA EN PYTHON
 print("Segunda Prueba:")
 
-#Definimos el array
-array = ['2', 'CASA', 'PRUEBA', '9', '-1']
 
-def suma_numero(array):
-    suma = 0
-    for element in array:
-        if element.isdigit():
-            suma += int(element)
+
+# Definir el arreglo
+arreglo = ['2', 'CASA', 'PRUEBA', '9', '-1']
+
+
+def suma_numeros(arreglo): #Seguimos con la misma logica que en el ejercicio anterior
+    suma = 0    #Creamos la variable suma iniciando con un valor 0
+    for elemento in arreglo:
+        if elemento.isdigit():  # Verificar si el elemento es un dígito
+            suma += int(elemento) 
         else:
-            print("No es un numero:", element)
-        return suma
-result = suma_numero(array)
-print("La suma total de los numeros en el Array es:", result)
+            print("No es un número:", elemento)  #Generamos un parametro para discriminar si el elemento en el arreglo es o no un numero
+    return suma if suma != 0 else None  # Si no se encontraron números, devolver None
+
+
+
+# Sumar los números en el arreglo e imprimir el resultado
+resultado = suma_numeros(arreglo)
+if resultado is not None:  # Verificar si la suma no es None
+    print("La suma total de los números en el arreglo es:", resultado)
+else:
+    print("No se encontraron números en el arreglo.")
